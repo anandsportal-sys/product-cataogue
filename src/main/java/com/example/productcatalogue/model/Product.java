@@ -14,16 +14,23 @@ public class Product {
     private String category;
     private String sku;
     private String brand;
+    private String price; // Changed from BigDecimal to String
 
     // Constructors
     public Product() {}
 
-    public Product(String name, String description, String category, String sku, String brand) {
+    public Product(String name, String description, String category, String sku, String brand, String price) {
         this.name = name;
         this.description = description;
         this.category = category;
         this.sku = sku;
         this.brand = brand;
+        this.price = price;
+    }
+
+    // For backward compatibility in service
+    public Product(String name, String description, String category, String sku, String brand) {
+        this(name, description, category, sku, brand, "0.00");
     }
 
     // Getters and Setters
@@ -44,5 +51,7 @@ public class Product {
 
     public String getBrand() { return brand; }
     public void setBrand(String brand) { this.brand = brand; }
-}
 
+    public String getPrice() { return price; }
+    public void setPrice(String price) { this.price = price; }
+}
