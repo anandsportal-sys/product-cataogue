@@ -49,12 +49,13 @@ function App() {
             <th>Category</th>
             <th>SKU</th>
             <th>Brand</th>
+            <th>Price</th>
           </tr>
         </thead>
         <tbody>
           {products.length === 0 && (
             <tr>
-              <td colSpan="5" align="center">No products found.</td>
+              <td colSpan="6" align="center">No products found.</td>
             </tr>
           )}
           {products.map((p) => (
@@ -64,6 +65,7 @@ function App() {
               <td>{p.category}</td>
               <td>{p.sku}</td>
               <td>{p.brand}</td>
+              <td>{p.price}</td>
             </tr>
           ))}
         </tbody>
@@ -84,4 +86,3 @@ function App() {
 }
 
 export default App;
-
